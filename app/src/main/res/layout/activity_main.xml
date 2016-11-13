@@ -9,11 +9,57 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.purdue.rkashuka.tangoalpha.MainActivity">
 
+    <TextView
+        android:text="Clinic+"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:id="@+id/editName"
+        android:hint="Name" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/editBirthday"
+        android:hint="birthday"
+        android:layout_below="@id/editName"
+        android:layout_centerHorizontal="true"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/editDiag"
+        android:hint="Diagnosis"
+        android:layout_below="@+id/editBirthday"
+        android:layout_alignStart="@+id/editBirthday" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Get Started"
-        android:id="@+id/button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/btnStart"
+        android:layout_marginBottom="77dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/editDiag"/>
+
+
 </RelativeLayout>

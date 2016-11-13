@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".recorder" />
+        <activity android:name=".birthday" />
     </application>
 
 </manifest>

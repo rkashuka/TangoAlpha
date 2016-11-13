@@ -16,18 +16,12 @@ public class MainActivity extends AppCompatActivity {
     String name = "";
     String birthday = "";
     String diagnosis = "";
+    Objects obj;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Button button = (Button) findViewById(R.id.btnStart);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                Intent i = new Intent(getApplicationContext(), recorder.class);
-//                startActivity(i);
-//            }
-//        });
 
         final EditText txtname = (EditText) findViewById(R.id.editName);
         final EditText txtbirth = (EditText) findViewById(R.id.editBirthday);
@@ -35,12 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnStart = (Button) findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                name = txtname.getText().toString();
-                birthday = txtbirth.getText().toString();
-                diagnosis = txtdiag.getText().toString();
-                System.out.println("name="+name);
-                System.out.println("birthday="+birthday);
-                System.out.println("diagnosis="+diagnosis);
+                obj = new Objects(txtname.getText().toString(),txtbirth.getText().toString(),txtdiag.getText().toString());
                 Intent i = new Intent(getApplicationContext(), recorder.class);
                 startActivity(i);
             }

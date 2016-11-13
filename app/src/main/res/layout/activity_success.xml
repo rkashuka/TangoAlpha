@@ -13,19 +13,19 @@
         android:textAlignment="center" />
 
     <TextView
-        android:text="Date"
+        android:text="Birthday"
         android:layout_width="120dip"
         android:layout_height="40dp"
-        android:id="@+id/Date"
+        android:id="@+id/Birthday"
         android:layout_x="125dp"
         android:layout_y="95dp"
         android:textAlignment="center" />
 
     <TextView
-        android:text="Time"
+        android:text="Diagnosis"
         android:layout_width="120dip"
         android:layout_height="40dp"
-        android:id="@+id/Time"
+        android:id="@+id/Diag"
         android:layout_x="125dp"
         android:layout_y="135dp"
         android:textAlignment="center" />

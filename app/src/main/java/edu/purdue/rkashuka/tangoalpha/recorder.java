@@ -1,6 +1,9 @@
 package edu.purdue.rkashuka.tangoalpha;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -25,6 +28,8 @@ public class recorder extends AppCompatActivity {
 
         Button recordButton =
                 (Button) findViewById(R.id.recordButton);
+        Button cap =
+                (Button) findViewById(R.id.btnCapture);
         Button nextButton = (Button) findViewById(R.id.btnSave);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,8 +38,10 @@ public class recorder extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        if (!hasCamera())
+        if (!hasCamera()) {
             recordButton.setEnabled(false);
+            cap.setEnabled(false);
+        }
     }
 
     private boolean hasCamera() {
@@ -47,18 +54,35 @@ public class recorder extends AppCompatActivity {
     }
 
     private static final int VIDEO_CAPTURE = 101;
-    private Uri fileUri;
+    private static final int IMAGE_CAPTURE = 102;
+    private Uri fileUri1;
+    private Uri fileUri2;
+    private Uri fileUri3;
 
-    public void startRecording(View view) {
+    public void startRecording(View view) throws IOException {
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
+                .format(new Date());
+        File mediaFile1 = new
+                File(Environment.getExternalStorageDirectory().getAbsolutePath()
+                + "/myvideo_" + timeStamp + ".mp4");
+        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        fileUri1 = Uri.fromFile(mediaFile1);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri1);
+        startActivityForResult(intent, VIDEO_CAPTURE);
+    }
+
+    public void clickImage(View view) {
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss")
+                .format(new Date());
         File mediaFile = new
                 File(Environment.getExternalStorageDirectory().getAbsolutePath()
-                + "/myvideo.mp4");
+                + "/IMG_" + timeStamp + ".jpg");
 
-        Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-        fileUri = Uri.fromFile(mediaFile);
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        fileUri2 = Uri.fromFile(mediaFile);
 
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-        startActivityForResult(intent, VIDEO_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri2);
+        startActivityForResult(intent, IMAGE_CAPTURE);
     }
 
 
@@ -69,6 +93,8 @@ public class recorder extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Toast.makeText(this, "Video has been saved to:\n" +
                         data.getData(), Toast.LENGTH_LONG).show();
+                capture c = new capture(data.getData().toString());
+                c.convert();
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(this, "Video recording cancelled.",
                         Toast.LENGTH_LONG).show();
@@ -76,6 +102,9 @@ public class recorder extends AppCompatActivity {
                 Toast.makeText(this, "Failed to record video",
                         Toast.LENGTH_LONG).show();
             }
+        }
+        else {
+            Toast.makeText(this, "Image has been saved ", Toast.LENGTH_LONG).show();
         }
     }
 }

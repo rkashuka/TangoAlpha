@@ -3,4 +3,5 @@ apply plugin: 'java'
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('src/main/java/TangoSDK_Zaniah_Java.jar')
+    compile files('src/main/java/jave-1.0.2.jar')
 }

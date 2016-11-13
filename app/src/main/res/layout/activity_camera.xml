@@ -21,16 +21,28 @@
         android:layout_centerHorizontal="true"
         />
 
+    <TextView
+        android:text="Choose from the following:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:textSize="20sp" />
+
     <Button
-        android:text="NEXT"
+        android:text="Capture"
         android:layout_width="350px"
         android:layout_height="150px"
-        android:layout_below="@+id/recordButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp"
-        android:id="@+id/btnSave"
+        android:id="@+id/btnCapture"
+        android:onClick="clickImage"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textSize="20sp" />
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/btnSave"
+        android:layout_marginEnd="11dp" />
 
     <Button
         android:layout_width="350px"
@@ -38,32 +50,20 @@
         android:id="@+id/recordButton"
         android:onClick="startRecording"
         android:text="record"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/btnCapture"
-        android:layout_alignStart="@+id/btnCapture"
         style="@style/Widget.AppCompat.Button"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textSize="18sp" />
-
-    <TextView
-        android:text="Choose from the following:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="14dp" />
+        android:textSize="18sp"
+        android:layout_below="@+id/btnCapture"
+        android:layout_alignEnd="@+id/textView2" />
 
     <Button
-        android:text="Capture"
+        android:text="NEXT"
         android:layout_width="350px"
         android:layout_height="150px"
-        android:id="@+id/btnCapture"
-        android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/btnSave"
-        android:layout_marginTop="47dp"
+        android:id="@+id/btnSave"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textSize="18sp" />
+        android:textSize="20sp"
+        android:layout_below="@+id/recordButton"
+        android:layout_alignStart="@+id/recordButton" />
 
 </RelativeLayout>

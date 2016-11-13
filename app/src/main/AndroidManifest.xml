@@ -20,10 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".recorder" />
-        <activity
-            android:name=".success"
-            android:label="@string/title_activity_success"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".birthday" />
     </application>
 
 </manifest>

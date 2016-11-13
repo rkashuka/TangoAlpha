@@ -17,4 +17,13 @@
         android:onClick="startRecording"
         android:text="record" />
 
+    <Button
+        android:text="NEXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recordButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:id="@+id/btnSave" />
+
 </RelativeLayout>

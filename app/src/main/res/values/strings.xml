@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TangoAlpha</string>
+    <string name="title_activity_success">success</string>
 </resources>

@@ -1,6 +1,13 @@
 apply plugin: 'java'
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'lib', include: ['*.jar'])
     compile files('src/main/java/TangoSDK_Zaniah_Java.jar')
+    compile 'com.ning:async-http-client:1.9.40'
+    compile 'joda-time:joda-time:2.9.4'
+    compile files('src/main/java/async-http-client-1.9.40.jar')
+    compile files('src/main/java/spring-boot-autoconfigure-1.2.3.RELEASE.jar')
+    compile files('src/main/java/commons-logging-1.2.jar')
+    compile files('src/main/java/spring-web-4.3.1.RELEASE.jar')
+    compile files('src/main/java/spring-web-4.3.1.RELEASE.jar')
 }

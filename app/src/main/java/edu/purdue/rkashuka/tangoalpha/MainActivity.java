@@ -1,26 +1,27 @@
 package edu.purdue.rkashuka.tangoalpha;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.view.View;
 import android.content.Context;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import java.sql.SQLOutput;
 
 public class MainActivity extends AppCompatActivity {
-    String name = "";
-    String birthday = "";
-    String diagnosis = "";
     Objects obj;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         final EditText txtname = (EditText) findViewById(R.id.editName);
@@ -34,8 +35,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        birthday bday = new birthday(this,R.id.editBirthday);
 
+        birthday bday = new birthday(this,R.id.editBirthday);
+        InputMethodManager imm = (InputMethodManager) getSystemService(
+                Activity.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+        super.onCreate(savedInstanceState);
     }
+//    public static void hideSoftKeyboard(Activity activity) {
+//        InputMethodManager inputMethodManager =
+//                (InputMethodManager) activity.getSystemService(
+//                        Activity.INPUT_METHOD_SERVICE);
+//        inputMethodManager.hideSoftInputFromWindow(
+//                activity.getCurrentFocus().getWindowToken(), 0);
+//    }
 
 }

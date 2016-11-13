@@ -18,9 +18,9 @@ public class success extends AppCompatActivity {
         TextView txtName = (TextView) findViewById(R.id.Name);
         TextView txtBirth = (TextView) findViewById(R.id.Birthday);
         TextView txtDiag = (TextView) findViewById(R.id.Diag);
-        txtName.setText(obj.getName());
-        txtBirth.setText(obj.getBirthday());
-        txtDiag.setText(obj.getDiagnosis());
+        txtName.setText("Name: "+obj.getName());
+        txtBirth.setText("Birth Date: "+obj.getBirthday());
+        txtDiag.setText("Diagnosis: "+obj.getDiagnosis());
         super.onCreate(savedInstanceState);
         Button fab = (Button) findViewById(R.id.Save);
         fab.setOnClickListener(new View.OnClickListener() {

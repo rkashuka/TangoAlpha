@@ -4,6 +4,7 @@ import java.io.File;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.pm.PackageManager;
@@ -15,8 +16,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Toast;
 
-public class recorder extends ActionBarActivity {
-
+public class recorder extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,14 @@ public class recorder extends ActionBarActivity {
 
         Button recordButton =
                 (Button) findViewById(R.id.recordButton);
-
+        Button nextButton = (Button) findViewById(R.id.btnSave);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), success.class);
+                startActivity(i);
+            }
+        });
         if (!hasCamera())
             recordButton.setEnabled(false);
     }

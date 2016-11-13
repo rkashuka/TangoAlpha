@@ -40,4 +40,8 @@ dependencies {
     compile 'javax.mail:mail:1.5.0-b01'
     compile 'org.springframework.boot:spring-boot-autoconfigure:1.2.3.RELEASE'
     //compile 'org.java.net.substance:substance:6.0'
+
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    testCompile 'junit:junit:4.12'
 }

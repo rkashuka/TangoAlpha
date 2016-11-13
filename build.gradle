@@ -3,19 +3,31 @@
 buildscript {
     repositories {
         jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
-
+        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
+        //classpath 'com.android.tools.build:gradle:2.2.2'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
 allprojects {
     repositories {
         jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
     }
+}
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
 task clean(type: Delete) {

@@ -40,7 +40,7 @@
         android:inputType="text"
         android:ems="10"
         android:id="@+id/editBirthday"
-        android:hint="birthday"
+        android:hint="Birth Date"
         android:layout_below="@id/editName"
         android:layout_centerHorizontal="true"
         />
@@ -53,14 +53,15 @@
         android:hint="Diagnosis"
         android:layout_below="@+id/editBirthday"
         android:layout_alignStart="@+id/editBirthday" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Get Started"
         android:id="@+id/btnStart"
-        android:layout_marginBottom="77dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/editDiag"/>
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/editDiag"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
